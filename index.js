@@ -1,0 +1,1 @@
+/* Javascript for Index Page */
