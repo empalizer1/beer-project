@@ -3,11 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="search.css">
     <script src="search.js" defer></script>
     <title>Search Beers</title>
 </head>
 <body>
-    
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html">Slumpa öl</a>
+                </li>
+                <li class="active-item">
+                    <a href="search.html">Sök öl</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="grid-container">
+        <div class="grid-item1">
+            <h1>Sök efter öl</h1>
+            <form>
+                <input id="searchInput" type="text">
+                <input id="searchButton" type="submit" value="Sök">
+            </form>
+        </div>
+        <div class="grid-item2">
+            <p>Sök bland Brewdogs alla öler till vänster så presenteras resultaten här!</p>
+            <ul class="beer-list">
+                <li>beer name</li>
+                <li>beer name</li>
+                <li>beer name</li>
+                <li>beer name</li>
+                <li>beer name</li>
+                <li>beer name</li>
+                <li>beer name</li>
+                <li>beer name</li>
+                <li>beer name</li>
+                <li>beer name</li>
+            </ul>
+            <span class="next"><span class="current-page"></span></span><span class="prev"></span>
+        </div>
+    </main>
 </body>
 </html>
