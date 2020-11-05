@@ -8,7 +8,6 @@ body {
     background-color: #eee;
     font-family: 'Open Sans', sans-serif;
 }
-
 nav {
     width: 100%;
     overflow: auto;
@@ -40,6 +39,9 @@ nav li a:hover, nav li.active-item a  {
 button {
     cursor: pointer;
 }
+a {
+    cursor: pointer;
+}
 .btn1 {
     text-transform: uppercase;
     padding: 1.25rem;
@@ -50,4 +52,24 @@ input[type=text], input[type=submit] {
 }
 input[type=submit] {
     cursor: pointer;
+}
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    width: 80%;
+    padding: 1.25rem;
+}
+img {
+    width: auto;
+    max-height: 200px;
+    height: 100%;
+    padding: 1rem 0;
+}
+.img {
+    background-color: #999;
+    text-align: center;
+    margin: -1.25rem -1.25rem 0 -1.25rem;
+}
+.flex {
+    display: flex;
+    justify-content: center;
 }
