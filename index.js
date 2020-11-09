@@ -1,14 +1,17 @@
 /* Javascript for Index Page */
 const url = "https://api.punkapi.com/v2/beers/random";
-const buttonElement = document.querySelector("button.btn1");
-const divElement = document.querySelector("div.grid-item2");
-const pTag = document.querySelector("div.grid-item2 > p");
+const buttonElement = document.querySelector(".btn1");
+const randomBeerDiv = document.querySelector("random-beer");
 
-let cardElement = document.createElement("div");
-let imageContainer = document.createElement("div");
+let card = document.querySelector(".card");
+let imageContainer = document.querySelector(".beer-img");
 let imageElement = document.createElement("img");
-let readMoreElement = document.createElement("a");
-let nameElement = document.createElement("h3");
+
+
+
+let readMore = document.querySelector(".read-more");
+let beerName = document.querySelector(".beer-name");
+
 
 // Function getData
 function getData(url, callback) {
@@ -30,32 +33,32 @@ function onClick(evt) {
 // Function render
 function render(data) {
 
-
-    divElement.classList.add("flex");
-    pTag.remove();
-
-
     for (let i = 0; i < data.length; i++) {
         const beer = data[i];
+
+        card.classList.add('white-background');
+
+        beerName.textContent = beer.name;
+
 
         if (beer.image_url == null) {
             imageElement.setAttribute("src", 'bild_saknas.png');
         } else {
             imageElement.setAttribute("src", beer.image_url);
         }
-        nameElement.textContent = beer.name;
-        readMoreElement.textContent = "Läs mer";
-        readMoreElement.setAttribute("name", beer.id);
-        readMoreElement.addEventListener('click', onReadMoreClicked);
 
-        cardElement.appendChild(imageContainer);
-        imageContainer.classList.add("img");
+
         imageContainer.appendChild(imageElement);
-        cardElement.appendChild(nameElement);
-        cardElement.appendChild(readMoreElement);
 
-        divElement.appendChild(cardElement);
-        cardElement.classList.add("card");
+        readMore.textContent = "LÄS MER";
+
+        readMore.setAttribute("name", beer.id);
+
+        readMore.addEventListener('click', onReadMoreClicked);
+
+
+
+
     }
 }
 
