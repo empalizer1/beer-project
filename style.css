@@ -73,3 +73,42 @@ img {
     display: flex;
     justify-content: center;
 }
+
+/* search sidan */
+
+.next, .prev {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+}
+
+.next:after {
+    border-right: 2px solid #000;
+    border-top: 2px solid #000;
+    width: 15px;
+    height: 15px;
+    content: '';
+    position: absolute;
+    transform: rotate(45deg);
+    margin-top: 3px;
+}
+
+.prev:before {
+    border-right: 2px solid #000;
+    border-top: 2px solid #000;
+    width: 15px;
+    height: 15px;
+    content: '';
+    position: absolute;
+    transform: rotate(-135deg);
+    margin-top: 3px;
+    margin-left: -20px;
+}
+
+ul{
+    list-style: none;
+}
+
+.beer-list {
+    padding-left: 0;
+}
