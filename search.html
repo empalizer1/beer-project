@@ -24,12 +24,16 @@
         <div class="grid-item1">
             <h1>Sök efter öl</h1>
             <form>
-                <input type="text">
-                <input type="submit" value="Sök">
+                <label for="searchButton">Sök öl:</label><br>
+                <input id="searchInput" type="text">
+                <input id="searchButton" type="submit" value="Sök">
             </form>
         </div>
         <div class="grid-item2">
             <p>Sök bland Brewdogs alla öler till vänster så presenteras resultaten här!</p>
+            <ul class="beer-list">
+            </ul>
+            <span class="next"></span></span><span class="prev"></span>
         </div>
     </main>
 </body>
