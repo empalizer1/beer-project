@@ -81,7 +81,7 @@ a {
 }
 .random-beer {
     width: 100%;
-    height: 380px;
+    height: 60vh;
     border: 2px solid #029bc8;
     border-radius: 10px;
     display: flex;
@@ -91,7 +91,7 @@ a {
 }
 
 button {
-    margin-top: 10px;
+    margin-top: 7px;
     cursor: pointer;
     background-color: #029bc8;
     border-radius: 40px;
@@ -100,7 +100,7 @@ button {
     font-family: 'paytone one';
     font-size: 24px;
     color: #fff;
-    padding: 15px;
+    padding: 10px;
 }
 
 .white-background {
@@ -117,15 +117,17 @@ button {
 .beer-name {
     color: #029bc8;
     font-family: 'paytone one';
+    margin-bottom: 10px;
 }
 
 .beer-img {
     background-color: #badbe5;
+    height: 38vh;
 }
 
 .beer-img img {
     padding: 10px;
-    height: 200px;
+    height: 36vh;
     width: auto;
 }
 
@@ -254,7 +256,7 @@ ul{
     .menu {
         margin-top: 20px;
         width: 100%;
-        height: 110px;
+        height: 20vh;
         justify-content: center;
     }
 
