@@ -11,7 +11,7 @@ const prevButton = document.querySelector('.prev');
 const beerList = (name, id) => {
     const beerElement = document.createElement('li');
     const infoLink = document.createElement('a');
-    infoLink.setAttribute('href', 'info.html?id=' + id);
+    infoLink.setAttribute('href', 'info.html?name=' + id);
     infoLink.innerHTML = name;
     beerElement.appendChild(infoLink);
     document.querySelector('.beer-list').appendChild(beerElement);
