@@ -25,7 +25,6 @@ const fetchBeer = () => {
             document.querySelector('.beer-list').innerHTML = "";
             for(let beer of data){
                 beerList(beer.name, beer.id);
-                console.log(beer);
             }
         })
 }
