@@ -97,9 +97,17 @@ button {
     border-style: solid;
     border-color: #029bc8;
     font-family: 'paytone one';
-    font-size: 24px;
+    font-size: 20px;
     color: #fff;
-    padding: 10px;
+    padding: 15px 25px 15px 25px;
+}
+
+    button:hover {
+    transition: all .4s ease;
+    -webkit-transition: all .6s ease;
+    background-color: #037597;
+    border-color: #037597;
+
 }
 
 .white-background {
