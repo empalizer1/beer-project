@@ -1,12 +1,15 @@
 const apiBaseUrl = "https://api.punkapi.com/v2/beers";
 let page = 1;
-let searchValue;
 const searchButton = document.querySelector('#searchButton');
 const searchInput = document.querySelector('#searchInput');
 const nextButton = document.querySelector('.next');
 const prevButton = document.querySelector('.prev');
-
-
+const hopsInput = document.querySelector('#searchHops');
+const searchMalt = document.querySelector('#searchMalt');
+const brewedBefore = document.querySelector('#brewedBefore');
+const brewedAfter = document.querySelector('#brewedAfter');
+const avbGreaterThan = document.querySelector('#avbGreaterThan');
+const avbLessThan = document.querySelector('#avbLessThan');
 
 const beerList = (name, id) => {
     const beerElement = document.createElement('li');
@@ -18,8 +21,30 @@ const beerList = (name, id) => {
 };
 
 const fetchBeer = () => {
+    let searchParams = "";
+    if(searchInput.value.length > 0) {
+        searchParams += '&beer_name=' + searchInput.value;
+    }
+    if(hopsInput.value.length > 0) {
+        searchParams += '&hops=' + hopsInput.value;
+    }
+    if(searchMalt.value.length > 0) {
+        searchParams += '&malt=' + searchMalt.value;
+    }
+    if(brewedBefore.value.length > 0) {
+        searchParams += '&brewed_before=' + brewedBefore.value;
+    }
+    if(brewedAfter.value.length > 0) {
+        searchParams += '&brewed_after=' + brewedAfter.value;
+    }
+    if(avbGreaterThan.value.length > 0) {
+        searchParams += '&abv_gt=' + avbGreaterThan.value;
+    }
+    if(avbLessThan.value.length > 0) {
+        searchParams += '&abv_lt=' + avbLessThan.value;
+}
 
-    fetch(`${apiBaseUrl}?page=${page}&per_page=10&beer_name=${searchValue}`)
+    fetch(`${apiBaseUrl}?page=${page}&per_page=10${searchParams}`)
         .then(response => response.json())
         .then(data => {
             document.querySelector('.beer-list').innerHTML = "";
@@ -31,7 +56,6 @@ const fetchBeer = () => {
 
 searchButton.addEventListener('click', (target) => {
     target.preventDefault();
-    searchValue = searchInput.value;
     page = 1;
     fetchBeer();
 })

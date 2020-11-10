@@ -194,6 +194,10 @@ form {
     font-size: 16px;
 }
 
+.searchButton {
+    width: 80%;
+}
+
 .grid-container {
     display: flex;
     max-width: 800px;
