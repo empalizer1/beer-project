@@ -55,8 +55,8 @@ function render(data) {
     beerName.textContent = beer.name;
     description.textContent = beer.description;
 
-    alcohol.textContent += beer.abv + '%';
-    volume.textContent += beer.volume.value + beer.volume.unit;
+    alcohol.textContent += beer.abv + ' %';
+    volume.textContent += beer.volume.value + ' ' + beer.volume.unit;
 
 
 

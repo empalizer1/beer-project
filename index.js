@@ -50,7 +50,7 @@ function render(data) {
 
         imageContainer.appendChild(imageElement);
 
-        readMore.textContent = "LÄS MER";
+        readMore.textContent = "READ MORE";
 
         readMore.setAttribute("name", beer.id);
 
