@@ -23,7 +23,9 @@ let food = "";
 
 let ingredients = document.querySelector('.ingredients');
 
-let hops = document.querySelector('.hops');
+let ingredientsList = document.querySelector('.ingredients-list')
+
+
 
 
 
@@ -52,12 +54,66 @@ function render(data) {
 
     imageContainer.appendChild(imageElement);
 
+
     beerName.textContent = beer.name;
+    alcohol.textContent += 'ABV ' + beer.abv + '%';
+
+
     description.textContent = beer.description;
 
-    alcohol.textContent += beer.abv + ' %';
-    volume.textContent += beer.volume.value + ' ' + beer.volume.unit;
+    
+    volume.innerHTML += beer.volume.value + ' ' + beer.volume.unit;
 
+
+    let ingredientsArray = Object.keys(beer.ingredients);
+
+    for (let index = 0; index < ingredientsArray.length; index++) {
+        let listItem = document.createElement("LI");
+        let nameOfIngredients = document.createTextNode(ingredientsArray[index]);
+        listItem.appendChild(nameOfIngredients);
+        ingredientsList.appendChild(listItem);
+        listItem.classList.add('list-item' + (index + 1));
+    }
+
+
+    let malt = document.querySelector('.list-item1');
+
+    let newMalt = "";
+
+    firstToUpperCase(malt, newMalt);
+
+
+    let allMalt = "";
+
+    let maltArray = Object.values(beer.ingredients)[0];
+
+    ingredientsStr(maltArray, allMalt, malt)
+
+
+
+    let hops = document.querySelector('.list-item2');
+
+    let newHops = "";
+
+    firstToUpperCase(hops, newHops);
+
+    let allHops = "";
+
+    let hopsArray = Object.values(beer.ingredients)[1];
+
+    ingredientsStr(hopsArray, allHops, hops)
+
+
+
+    let yeast = document.querySelector('.list-item3');
+
+    let newYeast = "";
+
+    firstToUpperCase(yeast, newYeast);
+
+    let yeastObject = Object.values(beer.ingredients)[2];
+
+    yeast.innerHTML += ': ' + yeastObject;
 
 
     for (let i = 0; i < beer.food_pairing.length; i++) {
@@ -69,40 +125,44 @@ function render(data) {
         }
     }
 
-    foodPairing.textContent += food;
-
-    let ingredientsArray = Object.keys(beer.ingredients);
-
-    let allIngredients = "";
+    foodPairing.innerHTML += food;
 
 
-    for (let i = 0; i < ingredientsArray.length; i++) {
-
-        if (i != (ingredientsArray.length - 1)) {
-            allIngredients += ingredientsArray[i] + ', ';
-        } else {
-            allIngredients += ingredientsArray[i];
-        }
-
-    }
-
-    ingredients.textContent += allIngredients;
-
-    brewersTips.textContent += beer.brewers_tips;
-
-    let allHops = "";
-
-    let hopsArray = Object.values(beer.ingredients)[1];
-
-    for (let i = 0; i < hopsArray.length; i++) {
-
-        if (i != (hopsArray.length - 1)) {
-            allHops += hopsArray[i].name + ', ';
-        } else {
-            allHops += hopsArray[i].name;
-        }
-    }
-
-
-    hops.textContent += allHops;
+    brewersTips.innerHTML += beer.brewers_tips;
 }
+
+
+function firstToUpperCase(str, newStr) {
+    for (let i = 0; i < str.innerHTML.length; i++) {
+
+
+        if (i == 0) {
+            newStr += str.innerHTML[i].toUpperCase();
+
+        } else {
+            newStr += str.innerHTML[i]
+        }
+    }
+
+    str.innerHTML = newStr;
+}
+
+
+
+function ingredientsStr(arr, str1, str2) {
+
+    for (let i = 0; i < arr.length; i++) {
+
+        if (i != (arr.length - 1)) {
+            str1 += arr[i].name + ', ';
+        } else {
+            str1 += arr[i].name;
+        }
+    }
+
+    str2.innerHTML += ': ' + str1;
+
+}
+
+
+
