@@ -89,7 +89,7 @@ a {
     align-items: center;
 }
 
-button {
+button, #searchButton {
     margin-top: 7px;
     cursor: pointer;
     background-color: #029bc8;
@@ -102,7 +102,7 @@ button {
     padding: 15px 25px 15px 25px;
 }
 
-    button:hover {
+    button:hover, #searchButton:hover, .beer-list li:hover {
     transition: all .4s ease;
     -webkit-transition: all .6s ease;
     background-color: #037597;
@@ -247,13 +247,8 @@ form {
     font-size: 16px;
 }
 
-.searchButton {
-    width: 80%;
-}
-
 .grid-container {
     display: flex;
-    max-width: 800px;
     margin: 0 auto;
     padding-top: 50px;
     padding: 0 30px;
@@ -273,21 +268,33 @@ form {
     margin-left: unset;
 }
 
-.arrows {
-    margin-top: 16px;
+#searchButton{
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    line-height: 2px;
+}
+
+input {
+    width: 80%;
+    height: 20px;
+    margin: 7px;
+    border: 2px solid #029bc8;
+    border-radius: 4px;
+    padding: 14px 5px;
 }
 
 .beer-list li {
     width: 290px;
-    height: 30px;
-    background-color: rgb(119, 119, 119);
-    border: 1px solid #000;
+    background-color: rgba(112, 112, 112, 0.205);
+    border: 1px solid #029bc8;
     border-radius: 3px;
-    margin-bottom: 3px;
+    margin-bottom: 5px;
     display: flex;
     font-family: 'Open Sans';
     align-items: center;
     font-size: 14px;
+    padding: 3px 10px;
 }
 
 .next, .prev {
