@@ -22,6 +22,7 @@ const beerList = (name, id) => {
 
 const fetchBeer = () => {
     let searchParams = "";
+    let validation = true;
     if(searchInput.value.length > 0) {
         searchParams += '&beer_name=' + searchInput.value;
     }
@@ -34,24 +35,38 @@ const fetchBeer = () => {
     if(brewedBefore.value.length > 0) {
         searchParams += '&brewed_before=' + brewedBefore.value;
     }
+    
     if(brewedAfter.value.length > 0) {
         searchParams += '&brewed_after=' + brewedAfter.value;
     }
-    if(avbGreaterThan.value.length > 0) {
+    if(avbGreaterThan.value.length > 0) {   
+    }
+    if (isNaN (avbGreaterThan.value) || avbGreaterThan.value < 1 || avbGreaterThan.value > 50) {
+        document.querySelector('#avbGreaterThanValidation').innerHTML = "The value must be between 1-50";
+        validation = false;
+    } else {
         searchParams += '&abv_gt=' + avbGreaterThan.value;
     }
-    if(avbLessThan.value.length > 0) {
-        searchParams += '&abv_lt=' + avbLessThan.value;
-}
 
-    fetch(`${apiBaseUrl}?page=${page}&per_page=10${searchParams}`)
-        .then(response => response.json())
-        .then(data => {
-            document.querySelector('.beer-list').innerHTML = "";
-            for(let beer of data){
-                beerList(beer.name, beer.id);
-            }
-        })
+    if(avbLessThan.value.length > 0) {
+    }
+    if (isNaN (avbGreaterThan.value) || avbGreaterThan.value < 1 || avbGreaterThan.value > 50) {
+        document.querySelector('#avbGreaterThanValidation').innerHTML = "The value must be between 1-50";
+        validation = false;
+    } else {
+        searchParams += '&abv_lt=' + avbLessThan.value;
+    }
+
+    if(validation){
+        fetch(`${apiBaseUrl}?page=${page}&per_page=10${searchParams}`)
+            .then(response => response.json())
+            .then(data => {
+                document.querySelector('.beer-list').innerHTML = "";
+                for(let beer of data){
+                    beerList(beer.name, beer.id);
+                }
+            })
+    }
 }
 
 searchButton.addEventListener('click', (target) => {
