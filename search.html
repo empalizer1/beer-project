@@ -15,23 +15,41 @@
             <div class="grid-item1">
                 <h1>Search beer</h1>
             <form>
-                <label for="searchButton">Search for beer:</label><br>
+                <label for="searchInput" class="searchInput">Search for beer:</label><br>
                 <input id="searchInput" type="text" placeholder="Search for beer">
-                <div>
+                <div id="searchInputValidation"></div>
+                <div id="adSearch">Advanced search <span class="dropdown"></span></div>
+                <div id="advancedSearch">
                     <!-- <label for="searchHops">Hops</label><br> -->
+
                     <input id="searchHops" type="text" placeholder="Search for hops"><br>
+                    <div id="searchHopsValidation"></div>
+
                     <!-- <label for="searchMalt">Malt</label><br> -->
+
                     <input id="searchMalt" type="text" placeholder="Search for malt"><br>
+                   <div id="searchMaltValidation"></div>
+
                     <!-- <label for="brewedBefore">Brewed before</label><br> -->
-                    <input id="brewedBefore" type="text" placeholder="Search for brewed before"><br>
+
+                    <input id="brewedBefore" type="text" placeholder="Search for brewed before mm-yyyy"><br>
+                    <div id="brewedBeforeValidation"></div>
+
                     <!-- <label for="brewedAfter">Brewed after</label><br> -->
-                    <input id="brewedAfter" type="text" placeholder="Search for brewed after"><br>
+                    
+                    <input id="brewedAfter" type="text" placeholder="Search for brewed after mm-yyyy"><br>
+                    <div id="brewedAfterValidation"></div>
+                    
                     <!-- <label for="avbGreaterThan">AVB greater than</label><br> -->
+
                     <input id="avbGreaterThan" type="number" placeholder="Search ABV from"><br>
                     <div id="avbGreaterThanValidation"></div>
+
                     <!-- <label for="avbLessThan">AVB less than</label><br> -->
+
                     <input id="avbLessThan" type="number" placeholder="Search for ABV to"><br>
-                    <div id="avbLessThan"></div>
+                    <div id="avbLessThanValidation"></div>
+
                 </div>
                 <input id="searchButton" type="submit" value="Submit">
             </form>

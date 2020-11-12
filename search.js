@@ -10,6 +10,8 @@ const brewedBefore = document.querySelector('#brewedBefore');
 const brewedAfter = document.querySelector('#brewedAfter');
 const avbGreaterThan = document.querySelector('#avbGreaterThan');
 const avbLessThan = document.querySelector('#avbLessThan');
+const adSearch = document.querySelector('#adSearch');
+const advancedSearch = document.querySelector('#advancedSearch');
 
 const beerList = (name, id) => {
     const beerElement = document.createElement('li');
@@ -33,28 +35,39 @@ const fetchBeer = () => {
         searchParams += '&malt=' + searchMalt.value;
     }
     if(brewedBefore.value.length > 0) {
-        searchParams += '&brewed_before=' + brewedBefore.value;
+        if(!brewedBefore.value.includes("-") || brewedBefore.value.split('-')[0].length != 2 || brewedBefore.value.split('-')[1].length != 4 ){
+            document.querySelector('#brewedBeforeValidation').innerHTML = "Date format: MM-YYYY"
+            validation = false;
+        }   else {
+            searchParams += '&brewed_before=' + brewedBefore.value;
+        }
     }
     
     if(brewedAfter.value.length > 0) {
-        searchParams += '&brewed_after=' + brewedAfter.value;
+        if(!brewedAfter.value.includes("-") || brewedAfter.value.split('-')[0].length != 2 || brewedAfter.value.split('-')[1].length != 4 ){
+            document.querySelector('#brewedAfterValidation').innerHTML = "Date format: MM-YYYY"
+            validation = false;
+        }   else {
+            searchParams += '&brewed_after=' + brewedAfter.value;
+        }
     }
+
     if(avbGreaterThan.value.length > 0) {   
-    }
-    if (isNaN (avbGreaterThan.value) || avbGreaterThan.value < 1 || avbGreaterThan.value > 50) {
-        document.querySelector('#avbGreaterThanValidation').innerHTML = "The value must be between 1-50";
-        validation = false;
-    } else {
-        searchParams += '&abv_gt=' + avbGreaterThan.value;
+        if(avbGreaterThan.value || avbGreaterThan.value < 1 || avbGreaterThan.value > 50) {
+            document.querySelector('#avbGreaterThanValidation').innerHTML = "The value must be between 1-50";
+            validation = false;
+        }   else {
+            searchParams += '&abv_gt=' + avbGreaterThan.value;
+        }   
     }
 
     if(avbLessThan.value.length > 0) {
-    }
-    if (isNaN (avbGreaterThan.value) || avbGreaterThan.value < 1 || avbGreaterThan.value > 50) {
-        document.querySelector('#avbGreaterThanValidation').innerHTML = "The value must be between 1-50";
-        validation = false;
-    } else {
-        searchParams += '&abv_lt=' + avbLessThan.value;
+        if(avbLessThan.value || avbLessThan.value < 1 || avbLessThan.value > 50) {
+            document.querySelector('#avbLessThanValidation').innerHTML = "The value must be between 1-50";
+            validation = false; 
+        }   else {
+            searchParams += '&abv_lt=' + avbLessThan.value;
+        } 
     }
 
     if(validation){
@@ -73,6 +86,16 @@ searchButton.addEventListener('click', (target) => {
     target.preventDefault();
     page = 1;
     fetchBeer();
+})
+
+adSearch.addEventListener('click', (target) => {
+    if(advancedSearch.classList.contains('open')){
+        adSearch.classList.remove('close');
+        advancedSearch.classList.remove('open');
+    } else {
+        adSearch.classList.add('close');
+        advancedSearch.classList.add('open');
+    }
 })
 
 nextButton.addEventListener('click',() => {
