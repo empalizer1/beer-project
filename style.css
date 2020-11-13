@@ -146,13 +146,13 @@ button, #searchButton {
 
 
 .beer-info-border {
-    margin-top: 5vh;
+    margin-top: 3vh;
     margin-right: auto;
     margin-left: auto;
     border: 2px solid #029bc8;
     border-radius: 10px;
     width: 85%;
-    height: 570px;
+    height: 80vh;
     display: flex;
     align-items: center;
 }
@@ -163,7 +163,7 @@ button, #searchButton {
     background-color: #fff;
     border-radius: 5px;
     width: 98%;
-    height: 550px;
+    height: 77vh;
     display: flex;
     justify-content: space-between;
 }
