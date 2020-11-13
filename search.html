@@ -1,49 +1,87 @@
 <!DOCTYPE html>
 <html lang="sv">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="search.css">
+    <link rel="stylesheet" href="style.css">
     <script src="search.js" defer></script>
-    <title>Search Beers</title>
+    <title>Search Brewdog Beers</title>
 </head>
+
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li>
-                    <a href="index.html">Slumpa öl</a>
-                </li>
-                <li class="active-item">
-                    <a href="search.html">Sök öl</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    <main class="grid-container">
-        <div class="grid-item1">
-            <h1>Sök efter öl</h1>
+    <section class="beer-info-border">
+        <section class="beer-info grid-container">
+            <div class="grid-item1">
+                <h1>Search beer</h1>
             <form>
-                <input id="searchInput" type="text">
-                <input id="searchButton" type="submit" value="Sök">
+                <label for="searchInput" class="searchInput">Search for beer:</label><br>
+                <input id="searchInput" type="text" placeholder="Search for beer">
+                <div id="searchInputValidation"></div>
+                <div id="adSearch">Advanced search <span class="dropdown"></span></div>
+                <div id="advancedSearch">
+                    <!-- <label for="searchHops">Hops</label><br> -->
+
+                    <input id="searchHops" type="text" placeholder="Search for hops"><br>
+                    <div id="searchHopsValidation"></div>
+
+                    <!-- <label for="searchMalt">Malt</label><br> -->
+
+                    <input id="searchMalt" type="text" placeholder="Search for malt"><br>
+                   <div id="searchMaltValidation"></div>
+
+                    <!-- <label for="brewedBefore">Brewed before</label><br> -->
+
+                    <input id="brewedBefore" type="text" placeholder="Search for brewed before mm-yyyy"><br>
+                    <div id="brewedBeforeValidation"></div>
+
+                    <!-- <label for="brewedAfter">Brewed after</label><br> -->
+                    
+                    <input id="brewedAfter" type="text" placeholder="Search for brewed after mm-yyyy"><br>
+                    <div id="brewedAfterValidation"></div>
+                    
+                    <!-- <label for="avbGreaterThan">AVB greater than</label><br> -->
+
+                    <input id="avbGreaterThan" type="number" placeholder="Search ABV from"><br>
+                    <div id="avbGreaterThanValidation"></div>
+
+                    <!-- <label for="avbLessThan">AVB less than</label><br> -->
+
+                    <input id="avbLessThan" type="number" placeholder="Search for ABV to"><br>
+                    <div id="avbLessThanValidation"></div>
+
+                </div>
+                <input id="searchButton" type="submit" value="Submit">
             </form>
-        </div>
-        <div class="grid-item2">
-            <p>Sök bland Brewdogs alla öler till vänster så presenteras resultaten här!</p>
-            <ul class="beer-list">
-                <li>beer name</li>
-                <li>beer name</li>
-                <li>beer name</li>
-                <li>beer name</li>
-                <li>beer name</li>
-                <li>beer name</li>
-                <li>beer name</li>
-                <li>beer name</li>
-                <li>beer name</li>
-                <li>beer name</li>
+            </div>
+        <section class="left-section-search">
+            <div class="grid-item2">
+                <p>Search among Brewdogs all beers and the results will be presented here!</p>
+                <ul class="beer-list">
+                </ul>
+                <div class="arrows">
+                    <span class="next"></span></span>
+                    <span class="prev"></span>
+                </div>
+            </div>
+        </section>
+        </section>
+    </section>
+
+        <section class="menu">
+
+            <img src="brewdog.png">
+
+            <ul class="nav">
+                <li>
+                    <a href="index.html">Random Beer</a>
+                </li>
+                <li class="active">
+                    <a href="search.html">Search Beer</a>
+                </li>
             </ul>
-            <span class="next"><span class="current-page"></span></span><span class="prev"></span>
-        </div>
-    </main>
+
+        </section>
 </body>
+
 </html>

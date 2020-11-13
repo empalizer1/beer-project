@@ -1,0 +1,480 @@
+/* CSS */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
+
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+
+body {
+    margin: 0 auto;
+    background: url('bakgrund_test.jpg') no-repeat center fixed;     
+    background-size: cover;
+    font-family: 'open sans', sans-serif;
+}
+
+.content {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu{
+    width: 100%;
+    height: 15vh;
+    max-height: 115px;
+    background-color: #20232c;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
+
+.menu img {
+    max-width: 100%;
+    max-height: 100px;
+    margin-left: 30px;
+    position: absolute;
+}
+
+.nav {
+    display: flex;
+    list-style-type: none;
+    padding-left: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.nav li {
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    padding-bottom: 20px;
+}
+
+.active a{
+    color: #029bc8;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+}
+
+.container2 {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5vh;
+}
+.random-beer {
+    width: 100%;
+    height: 60vh;
+    border: 2px solid #029bc8;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button, #searchButton {
+    margin-top: 7px;
+    cursor: pointer;
+    background-color: #029bc8;
+    border-radius: 40px;
+    border-style: solid;
+    border-color: #029bc8;
+    font-family: 'paytone one';
+    font-size: 20px;
+    color: #fff;
+    padding: 15px 25px 15px 25px;
+}
+
+    button:hover, #searchButton:hover, .beer-list li:hover {
+    transition: all .4s ease;
+    -webkit-transition: all .6s ease;
+    background-color: #037597;
+    border-color: #037597;
+
+}
+
+.white-background {
+    background-color: #fff;
+    width: 95%;
+    height: 95%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.beer-name {
+    color: #029bc8;
+    font-family: 'paytone one';
+    margin: 5px 0 10px 0;
+}
+
+.beer-img {
+    background-color: #badbe5;
+    height: 38vh;
+}
+
+.beer-img img {
+    padding: 10px;
+    height: 36vh;
+    width: auto;
+}
+
+.read-more {
+    color: #029bc8;
+    font-weight: 900;
+}
+
+
+.beer-info-border {
+    margin-top: 3vh;
+    margin-right: auto;
+    margin-left: auto;
+    border: 2px solid #029bc8;
+    border-radius: 10px;
+    width: 85%;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+.beer-info {
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #fff;
+    border-radius: 5px;
+    width: 98%;
+    height: 77vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.beer-info .beer-img {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.beer-info .beer-img img {
+    height: 68%;
+    width: auto;
+}
+
+.left-section {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+ul {
+    list-style: none;
+}
+
+.beer-list a {
+    color: #000;
+}
+
+.beer-list {
+    padding-left: 0;
+}
+
+.heading {
+    margin: 0px 20px 0px 20px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.name-desc .beer-name {
+    font-size: 2em;
+}
+
+.alcohol {
+    margin-left: 10px;
+}
+
+.description {
+    margin: 5px 20px 0px 20px;
+}
+
+.info-list {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.info-list ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+
+/* search sidan */
+
+h1 {
+    font-family: 'Open Sans';
+    font-size: 38px;
+    margin: 0;
+    margin-top: 10px;
+    margin-left: 8px;
+}
+
+form {
+    font-family: 'Open Sans';
+    font-size: 16px;
+}
+
+.grid-container {
+    display: flex;
+    margin: 0 auto;
+    padding-top: 50px;
+    padding: 0 30px;
+    justify-content: center;
+}
+
+.grid-item1 {
+    width: 250px;
+    margin-right: 50px;
+}
+
+.grid-item2 {
+    max-width: 290px;
+}
+
+.left-section-search {
+    margin-left: unset;
+}
+
+.searchInput {
+    font-size: 16px;
+    margin-left: 8px;
+}
+
+.dropdown {
+    border-right: 2px solid #000;
+    border-top: 2px solid #000;
+    width: 10px;
+    height: 10px;
+    content: '';
+    position: absolute;
+    margin-left: 8px;
+    transform: rotate(135deg);
+    margin-top: 2px;
+}
+
+#adSearch.close .dropdown {
+    transform: rotate(315deg);
+}
+
+#adSearch {
+    font-size: 12px;
+    margin-left: 8px;
+    cursor: pointer;
+}
+
+#adSearch:hover, .dropdown:hover{
+    transition: all .4s ease;
+    -webkit-transition: all .6s ease;
+    color: #037597;
+    font-weight: bold;
+
+}
+
+#advancedSearch {
+    display:none;
+}
+
+#advancedSearch.open {
+    display:block;
+}
+
+#avbLessThanValidation, #avbGreaterThanValidation, #brewedAfterValidation, #brewedBeforeValidation {
+    font-size: 12px;
+    margin-left: 8px;
+}
+
+#searchButton {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    line-height: 2px;
+
+}
+
+input {
+    width: 80%;
+    height: 20px;
+    margin: 7px;
+    border: 2px solid #029bc8;
+    border-radius: 4px;
+    padding: 14px 5px;
+}
+
+.beer-list li {
+    width: 290px;
+    background-color: rgba(112, 112, 112, 0.205);
+    border: 1px solid #029bc8;
+    border-radius: 3px;
+    margin-bottom: 5px;
+    display: flex;
+    font-family: 'Open Sans';
+    align-items: center;
+    font-size: 14px;
+    padding: 3px 10px;
+}
+
+.next, .prev {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+}
+
+.next:after {
+    border-right: 2px solid #000;
+    border-top: 2px solid #000;
+    width: 15px;
+    height: 15px;
+    content: '';
+    position: absolute;
+    transform: rotate(45deg);
+    margin-top: 3px;
+}
+
+.prev:before {
+    border-right: 2px solid #000;
+    border-top: 2px solid #000;
+    width: 15px;
+    height: 15px;
+    content: '';
+    position: absolute;
+    transform: rotate(-135deg);
+    margin-top: 3px;
+    margin-left: -20px;
+}
+
+
+@media only screen and (max-width: 800px) {
+    
+    body {
+        width: 100%;
+    }
+    
+    .content {
+        width: 100%;
+        flex-direction: column;
+        margin: 0;
+    }
+
+    .menu {
+        margin-top: 20px;
+        width: 100%;
+        height: 10vh;
+        justify-content: center;
+    }
+
+    .menu img {
+        display: none;
+    }
+
+    .nav {
+        margin-top: 20px;
+    }
+
+    .nav li a {
+        font-size: 20px;
+    }
+
+    .container2 {
+        width: 90%;
+        margin-top: 30px;
+    }
+
+    .random-beer {
+        height: 70vh;
+    }
+    
+    .card .beer-img {
+        height: 80%
+    }
+
+    .card .beer-img img {
+        height: 95%;
+    }
+
+    .beer-info-border {
+        margin-top: 5px;
+        height: 88vh;
+        width: 97%;
+    }
+
+    .beer-info {
+        height: 86vh;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .beer-info .beer-img {
+        width: 100%;
+        height: 30%;
+    }
+    
+    .beer-info .beer-img img {
+        height: 97%;
+        width: auto;
+    }
+
+    .heading {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .heading .beer-name {
+        font-size: 20px;
+        margin-bottom: 0;
+    }
+
+    .alcohol {
+        margin: 0px;
+        margin-bottom: 10px;
+    }
+
+    .left-section {
+        height: 100%;
+        width: 98%;
+        overflow-y: scroll;
+    }
+
+    .description {
+        margin-top: 0;
+    }
+
+    .info-list {
+        height: 55%;
+    }
+
+}
