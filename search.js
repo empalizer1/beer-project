@@ -53,7 +53,7 @@ const fetchBeer = () => {
     }
 
     if(avbGreaterThan.value.length > 0) {   
-        if(avbGreaterThan.value || avbGreaterThan.value < 1 || avbGreaterThan.value > 50) {
+        if(avbGreaterThan.value < 1 || avbGreaterThan.value > 50) {
             document.querySelector('#avbGreaterThanValidation').innerHTML = "The value must be between 1-50";
             validation = false;
         }   else {
@@ -62,7 +62,7 @@ const fetchBeer = () => {
     }
 
     if(avbLessThan.value.length > 0) {
-        if(avbLessThan.value || avbLessThan.value < 1 || avbLessThan.value > 50) {
+        if(avbLessThan.value < 1 || avbLessThan.value > 50) {
             document.querySelector('#avbLessThanValidation').innerHTML = "The value must be between 1-50";
             validation = false; 
         }   else {
@@ -71,14 +71,22 @@ const fetchBeer = () => {
     }
 
     if(validation){
-        fetch(`${apiBaseUrl}?page=${page}&per_page=10${searchParams}`)
-            .then(response => response.json())
-            .then(data => {
-                document.querySelector('.beer-list').innerHTML = "";
-                for(let beer of data){
-                    beerList(beer.name, beer.id);
-                }
-            })
+        if (window.sessionStorage.getItem(`${page}_${searchParams}`)) {
+            document.querySelector('.beer-list').innerHTML = "";
+            for(let beer of JSON.parse(window.sessionStorage.getItem(`${page}_${searchParams}`))){
+                beerList(beer.name, beer.id);
+            }
+        } else {
+            fetch(`${apiBaseUrl}?page=${page}&per_page=10${searchParams}`)
+                .then(response => response.json())
+                .then(data => {
+                    window.sessionStorage.setItem(`${page}_${searchParams}`, JSON.stringify(data));
+                    document.querySelector('.beer-list').innerHTML = "";
+                    for(let beer of data){
+                        beerList(beer.name, beer.id);
+                    }
+                })
+        }
     }
 }
 
